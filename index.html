@@ -1,24 +1,316 @@
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>study-space-find</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudySpace - Tu espacio ideal para estudiar</title>
+    <meta name="description" content="El Airbnb de los espacios de trabajo. Encuentra lugares increíbles para estudiar, trabajar o relajarte a precios que aman los estudiantes.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="container">
+                <h1 class="hero-title">
+                    Tu espacio ideal
+                    <span class="hero-highlight">para estudiar</span>
+                </h1>
+                <p class="hero-description">
+                    El Airbnb de los espacios de trabajo. Encuentra lugares increíbles para estudiar, 
+                    trabajar o relajarte a precios que aman los estudiantes.
+                </p>
+                
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <div class="search-field">
+                        <span class="search-icon">📍</span>
+                        <input type="text" placeholder="¿Dónde quieres estudiar?" id="location-input">
+                    </div>
+                    <div class="search-field">
+                        <span class="search-icon">📅</span>
+                        <input type="text" placeholder="¿Cuándo?" id="date-input">
+                    </div>
+                    <button class="search-button" onclick="handleSearch()">
+                        <span class="search-icon">🔍</span>
+                        Buscar
+                    </button>
+                </div>
 
-    <meta property="og:title" content="study-space-find" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+                <div class="hero-tags">
+                    <span class="tag">📚 Bibliotecas silenciosas</span>
+                    <span class="tag">☕ Cafés con WiFi</span>
+                    <span class="tag">🏢 Coworkings</span>
+                    <span class="tag">🏠 Espacios caseros</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse"></div>
+        </div>
+    </section>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">¿Cómo funciona?</h2>
+                <p class="section-description">
+                    Tres pasos simples para encontrar tu espacio ideal y aumentar tu productividad
+                </p>
+            </div>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-icon step-icon-blue">🔍</div>
+                    <h3 class="step-title">Busca</h3>
+                    <p class="step-description">
+                        Encuentra el espacio perfecto cerca de ti con nuestros filtros inteligentes
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon step-icon-purple">📅</div>
+                    <h3 class="step-title">Reserva</h3>
+                    <p class="step-description">
+                        Reserva por horas, días o semanas. Pago seguro en 30 segundos
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon step-icon-orange">👨‍💻</div>
+                    <h3 class="step-title">Estudia</h3>
+                    <p class="step-description">
+                        Llega, preséntate y comienza a ser más productivo que nunca
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Spaces Section -->
+    <section id="featured-spaces" class="section section-gray">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Espacios destacados</h2>
+                <p class="section-description">
+                    Descubre los lugares favoritos de nuestra comunidad de estudiantes
+                </p>
+            </div>
+
+            <div class="spaces-grid">
+                <div class="space-card">
+                    <div class="space-image">
+                        <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Café Central Study">
+                        <div class="space-type">Café</div>
+                        <div class="space-rating">⭐ 4.9</div>
+                    </div>
+                    <div class="space-info">
+                        <h3 class="space-name">Café Central Study</h3>
+                        <div class="space-location">📍 Centro, Madrid</div>
+                        <div class="space-amenities">
+                            <span class="amenity">WiFi</span>
+                            <span class="amenity">Café</span>
+                            <span class="amenity">Silencioso</span>
+                        </div>
+                        <div class="space-footer">
+                            <div class="space-price">5€/hora</div>
+                            <button class="reserve-btn">Reservar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-card">
+                    <div class="space-image">
+                        <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Hub Universitario">
+                        <div class="space-type">Coworking</div>
+                        <div class="space-rating">⭐ 4.8</div>
+                    </div>
+                    <div class="space-info">
+                        <h3 class="space-name">Hub Universitario</h3>
+                        <div class="space-location">📍 Moncloa, Madrid</div>
+                        <div class="space-amenities">
+                            <span class="amenity">WiFi</span>
+                            <span class="amenity">Enchufes</span>
+                            <span class="amenity">Grupos</span>
+                        </div>
+                        <div class="space-footer">
+                            <div class="space-price">3€/hora</div>
+                            <button class="reserve-btn">Reservar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-card">
+                    <div class="space-image">
+                        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Biblioteca Moderna">
+                        <div class="space-type">Biblioteca</div>
+                        <div class="space-rating">⭐ 4.7</div>
+                    </div>
+                    <div class="space-info">
+                        <h3 class="space-name">Biblioteca Moderna</h3>
+                        <div class="space-location">📍 Salamanca, Madrid</div>
+                        <div class="space-amenities">
+                            <span class="amenity">Silencio</span>
+                            <span class="amenity">Libros</span>
+                            <span class="amenity">Escritorio</span>
+                        </div>
+                        <div class="space-footer">
+                            <div class="space-price">2€/hora</div>
+                            <button class="reserve-btn">Reservar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-card">
+                    <div class="space-image">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Espacio Creativo Loft">
+                        <div class="space-type">Loft</div>
+                        <div class="space-rating">⭐ 4.9</div>
+                    </div>
+                    <div class="space-info">
+                        <h3 class="space-name">Espacio Creativo Loft</h3>
+                        <div class="space-location">📍 Malasaña, Madrid</div>
+                        <div class="space-amenities">
+                            <span class="amenity">Natural</span>
+                            <span class="amenity">Inspirador</span>
+                            <span class="amenity">Flexible</span>
+                        </div>
+                        <div class="space-footer">
+                            <div class="space-price">8€/hora</div>
+                            <button class="reserve-btn">Reservar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-footer">
+                <button class="btn-primary">Ver todos los espacios</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Lo que dicen nuestros estudiantes</h2>
+                <p class="section-description">
+                    Miles de jóvenes ya transformaron su forma de estudiar y trabajar
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80" alt="María González" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4 class="testimonial-name">María González</h4>
+                            <p class="testimonial-role">Estudiante de Derecho</p>
+                            <p class="testimonial-age">22 años</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-content">
+                        "StudySpace cambió mi forma de estudiar. Encontré cafés increíbles cerca de la uni donde puedo concentrarme 100%. ¡Y son súper baratos!"
+                    </p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80" alt="Carlos Ruiz" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4 class="testimonial-name">Carlos Ruiz</h4>
+                            <p class="testimonial-role">Freelancer</p>
+                            <p class="testimonial-age">24 años</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-content">
+                        "Como freelancer necesito cambiar de ambiente. Con StudySpace puedo trabajar desde coworkings diferentes cada día sin comprometerme a mensualidades."
+                    </p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Ana Martín" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4 class="testimonial-name">Ana Martín</h4>
+                            <p class="testimonial-role">Estudiante de Medicina</p>
+                            <p class="testimonial-age">20 años</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-content">
+                        "Los espacios verificados me dan confianza total. Siempre encuentro lugares perfectos para mis sesiones de estudio largas. ¡Recomendadísimo!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-white">StudySpace en números</h2>
+                <p class="section-description text-light">
+                    Una comunidad creciente de jóvenes que estudian y trabajan mejor
+                </p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-number">15,000+</div>
+                    <div class="stat-label">Estudiantes activos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📍</div>
+                    <div class="stat-number">2,500+</div>
+                    <div class="stat-label">Espacios verificados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🏙️</div>
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Ciudades disponibles</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Satisfacción garantizada</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="cta-section">
+        <div class="cta-background"></div>
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">
+                    ¿Listo para estudiar
+                    <span class="cta-highlight">en grande?</span>
+                </h2>
+                <p class="cta-description">
+                    Únete a miles de estudiantes que ya transformaron su productividad. 
+                    Tu espacio perfecto te está esperando.
+                </p>
+                <div class="cta-buttons">
+                    <button class="btn-primary">Empezar ahora gratis</button>
+                    <button class="btn-secondary">Ver demo</button>
+                </div>
+                <div class="cta-features">
+                    <span class="feature">✓ Registro gratuito</span>
+                    <span class="feature">✓ Sin compromiso</span>
+                    <span class="feature">✓ Cancela cuando quieras</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
 </html>
